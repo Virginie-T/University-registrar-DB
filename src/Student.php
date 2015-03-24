@@ -6,10 +6,10 @@
         private $date;
         private $id;
 
-        function __construct($name_student, $date_enrolled, $id = null)
+        function __construct($name, $date, $id = null)
         {
-            $this->name = $name_student;
-            $this->date = $date_enrolled;
+            $this->name = $name;
+            $this->date = $date;
             $this->id = $id;
         }
 
@@ -20,7 +20,7 @@
 
         function setName($new_name)
         {
-            $this->$name = (string) $new_name;
+            $this->name = (string) $new_name;
         }
 
         function getDate()

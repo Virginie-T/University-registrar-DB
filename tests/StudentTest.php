@@ -31,6 +31,23 @@
             //Assert
             $this->assertEquals("Jimmy", $result);
         }
+
+        function test_setName()
+        {
+            //Arrange
+            $name = "Timmy";
+            $date = "2-13-2011";
+            $new_student = new Student($name, $date);
+            $new_name = "Jimmy";
+
+            //Act
+            $new_student->setName($new_name);
+            $result = $new_student->getName();
+            
+            //Assert
+            $this->assertEquals("Jimmy", $result);
+
+        }
     }
 
 
