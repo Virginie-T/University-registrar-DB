@@ -16,7 +16,7 @@
         return $app['twig']->render('index.twig');
     });
 
-
+    return $app;
 
 
 
