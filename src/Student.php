@@ -45,7 +45,7 @@
 
         function save()
         {
-            $statement = $GLOBALS['DB']->query("INSERT INTO students (name, date) VALUES ('{ $this->getName()}', '{ $this->getDate() }') RETURNING id;");
+            $statement = $GLOBALS['DB']->query("INSERT INTO students (name, date) VALUES ('{$this->getName()}', '{$this->getDate()}') RETURNING id;");
             $result = $statement->fetch(PDO::FETCH_ASSOC);
             $this->setId($result['id']);
         }
@@ -63,6 +63,12 @@
             }
             return $students;
         }
+
+        static function deleteAll()
+        {
+                $GLOBALS['DB']->exec("DELETE FROM students *;");
+        }
+
     }
 
 ?>

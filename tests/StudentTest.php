@@ -12,11 +12,11 @@
 
     class StudentTest extends PHPUnit_Framework_TestCase
     {
-        // protected function tearDown()
-        // {
-        //     Student::deleteAll();
-        // }
-        //
+        protected function tearDown()
+        {
+            Student::deleteAll();
+        }
+
 
         function test_getName()
         {
@@ -103,6 +103,36 @@
 
             $this->assertEquals(4, $result);
         }
+
+        function test_save()
+        {
+            //arrange
+            $name = "Jimmy";
+            $date = "30-3-2011";
+            $new_student = new Student($name, $date);
+            $new_student->save();
+
+            //act
+            $result = Student::getAll();
+
+            $this->assertEquals($new_student, $result[0]);
+        }
+
+        function test_deleteAll()
+        {
+            $new_student = new Student("Timmy", "30-42-32");
+            $new_student->save();
+            $new_student2 = new Student("Jimmy", "434-43-21");
+            $new_student2->save();
+
+            Student::deleteAll();
+
+            $result = Student::getAll();
+
+            $this->assertEquals([], $result);
+
+        }
+
 
     }
 
