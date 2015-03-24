@@ -7,7 +7,9 @@
 
     $DB = new PDO('pgsql:host=localhost;dbname=registrar');
 
-    $app->register(new Silex\Provider\TwigServiceProvider(), array ('twig.path' => __DIR__."/../views"));
+    $app->register(new Silex\Provider\TwigServiceProvider(), array (
+    'twig.path' => __DIR__."/../views"
+    ));
 
     use Symfony\Component\HttpFoundation\Request;
     Request::enableHttpMethodParameterOverride();
