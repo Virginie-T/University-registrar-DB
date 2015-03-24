@@ -42,4 +42,13 @@
         {
             $this->id = (int) $new_id;
         }
+
+        function save()
+        {
+            $statement = $GLOBALS['DB']->query("INSERT INTO students (name, date) VALUES ('{ $this->getName()}', '{ $this->getDate() }') RETURNING id;");
+            $result = $statement->fetch(PDO::FETCH_ASSOC);
+            $this->setId($result['id']);
+        }
     }
+
+?>
