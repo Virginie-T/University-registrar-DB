@@ -1,6 +1,6 @@
 <?php
 
-    class Register
+    class Student
     {
         private $name;
         private $date;
