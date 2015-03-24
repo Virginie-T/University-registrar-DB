@@ -79,6 +79,31 @@
             $this->assertEquals("14-3-2010", $result);
         }
 
+        function test_getId()
+        {
+            $name = "Jimmy";
+            $date = "3-14-2010";
+            $id = 4;
+            $new_student = new Student($name, $date, $id);
+
+            $result = $new_student->getId();
+
+            $this->assertEquals($result, 4);
+        }
+
+        function test_setId()
+        {
+            $name = "Gimmy";
+            $date = "3-14-2010";
+            $id = 2;
+            $new_student = new Student($name, $date, $id);
+
+            $new_student->setId(4);
+            $result = $new_student->getId();
+
+            $this->assertEquals(4, $result);
+        }
+
     }
 
 
