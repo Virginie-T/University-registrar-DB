@@ -12,6 +12,11 @@
     class CoursesTest extends PHPUnit_Framework_TestCase
     {
 
+        protected function tearDown()
+        {
+            Course::deleteAll();
+        }
+
         function test_getName()
         {
             //arrange
@@ -120,6 +125,22 @@
             $this->assertEquals([], $result);
         }
 
+        function test_getAll()
+        {
+            $name = "Php course";
+            $level = 6969;
+            $new_course = new Course($name, $level);
+            $new_course->save();
+
+            $name2 = "Ruby course";
+            $level2 = 5349435;
+            $new_course2 = new Course($name2, $level2);
+            $new_course2->save();
+
+            $result = Course::getAll();
+
+            $this->assertEquals([$new_course, $new_course2], $result);
+        }
 
 
 
