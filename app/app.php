@@ -34,7 +34,7 @@
 
     $app->post("/delete_students", function() use ($app) {
         $students = Student::deleteAll();
-        return $app['twig']->render('index.twig', array('students' => Student::getAll()));
+        return $app['twig']->render('students.twig', array('students' => Student::getAll()));
     });
 
     return $app;

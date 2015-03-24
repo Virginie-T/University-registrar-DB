@@ -6,19 +6,54 @@
     </head>
     <body>
         <div class="container">
-            <h1 style="text-align: center">Welcome to the Baumgart University</h1>
+            <h1 style="text-align: center"><em>Welcome to the Baumgart University</em></h1>
             <h2>Register yourself here :</h2>
             <form action="/add_student" method="post">
-                <label for="student_name">Enter your Name :</label>
-                <input type="text" name="student_name" id="student_id">
-                <label for="date">Date :</label>
-                <input type="text" name="date" id="date" placeholder="MM-DD-YYYY">
 
-                <button type="submit">Add</button>
+                    <label for="student_name">Enter your Name :</label>
+                    <input type="text" name="student_name" id="student_id">
+                    <label for="date">Date :</label>
+                    <input type="text" name="date" id="date" placeholder="MM-DD-YYYY">
 
-            </form>
-            <form action="/students" method="post">
-            <button type="submit">View Students</button>
+                <form action="/students" method="post">
+                    <button type="submit" class="btn btn-danger">View Students</button>
+                </form>
+
+            <h2>Courses avaible :</h2>
+
+                <select id="courses" name="courses">
+                    <option value="History ">History</option>
+                    <option value="Math">Math</option>
+                    <option value="English">English</option>
+                    <option value="Coding">Coding</option>
+                    <option value="History of the great Baumgart">History of the great Baumgart</option>
+                </select>
+                <br>
+                <h3>Level of the course :</h3>
+                <select id="levels" name="levels">
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                </select>
+                <br>
+                <button  style="margin-top: 20px" type="submit" class="btn btn-success">Add</button>
+
+        </form>
+
+        <h2>Create a course :</h2>
+
+        <form action="/add_course" method="post">
+            <label for="name_course">Enter the name of a new course :</label>
+            <input type="text" name="name" id="name">
+
+            <h4>Choose the level :</h4>
+            <select id="new_levels" name="new_levels">
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+            </select>
+            <br>
+            <button style="margin-top: 20px" type="submit" class="btn btn-success">Add course</button>
         </form>
         </div>
     </body>
