@@ -69,6 +69,15 @@
                 $GLOBALS['DB']->exec("DELETE FROM students *;");
         }
 
+
+        // JOIN statement
+
+        SELECT students.* FROM
+        courses JOIN students_courses ON (courses.id = students_courses.course_id)
+                JOIN students ON (students_courses.student_id = students.id)
+        WHERE courses.id = 1;
+
+
     }
 
 ?>

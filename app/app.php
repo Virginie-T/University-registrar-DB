@@ -8,6 +8,16 @@
 
     $DB = new PDO('pgsql:host=localhost;dbname=registrar');
 
+    $database = $GLOBALS['DB']->query("SELECT * FROM courses;"
+    if(empty($database)) {
+        $history = new Course("History", 100);
+        $math= new Course("Math", 200);
+        $history = new Course("English", 100);
+        $history = new Course("Coding", 300);
+
+    }
+
+
     $app->register(new Silex\Provider\TwigServiceProvider(), array (
     'twig.path' => __DIR__."/../views"
     ));
