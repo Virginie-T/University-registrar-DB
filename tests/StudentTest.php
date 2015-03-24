@@ -43,11 +43,27 @@
             //Act
             $new_student->setName($new_name);
             $result = $new_student->getName();
-            
+
             //Assert
             $this->assertEquals("Jimmy", $result);
 
         }
+
+        function test_getDate()
+        {
+            //arrange
+            $name = "Jimmy";
+            $date = "3-14-2010";
+            $new_student = new Student($name, $date);
+
+            //act
+            $result = $new_student->getDate();
+
+            //assert
+            $this->assertEquals("3-14-2010", $result);
+
+        }
+
     }
 
 
