@@ -64,6 +64,21 @@
 
         }
 
+        function test_setDate()
+        {
+            //arrange
+            $name = "Conor";
+            $date = "3-14-2010";
+            $new_student = new Student($name, $date);
+
+            //act
+            $new_student->setDate("14-3-2010");
+            $result = $new_student->getDate();
+
+            //assert
+            $this->assertEquals("14-3-2010", $result);
+        }
+
     }
 
 
