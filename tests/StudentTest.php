@@ -130,7 +130,6 @@
             $result = Student::getAll();
 
             $this->assertEquals([], $result);
-
         }
 
 

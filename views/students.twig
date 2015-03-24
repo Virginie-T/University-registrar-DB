@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Students</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="container">
+        {% if students is not empty %}
+        <h2>Here are all the students :</h2>
+
+            {% for student in students %}
+
+                <li style="margin-bottom: 10px">
+                    Name : {{ student.getName }} <br>
+                    Date : {{ student.getDate }}
+                </li>
+
+            {% endfor %}
+
+            {% else %}
+
+            <p>
+                Sorry, we have no student listed yet.
+            </p>
+
+        {% endif %}
+        <a href="/">Home</a>
+
+        <form action="/delete_students" method="post">
+            <button type="submit">Delete all students!!!!</button>
+        </form>
+    </div>
+    </body>
+</html>

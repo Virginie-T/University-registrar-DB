@@ -5,15 +5,21 @@
         <title>University Registrar</title>
     </head>
     <body>
-        <h1 style="text-align: center">Welcome to the Baumgart University</h1>
-        <h2>Register yourself here :</h2>
-        <form action="/add_student" method="post">
-            <label for="student_name">Enter your Name :</label>
-            <input type="text" name="student_name" id="student_id">
-            <label for="date">Date :</label>
-            <input type="text" name="date" id="date" placeholder="MM-DD-YYYY">
+        <div class="container">
+            <h1 style="text-align: center">Welcome to the Baumgart University</h1>
+            <h2>Register yourself here :</h2>
+            <form action="/add_student" method="post">
+                <label for="student_name">Enter your Name :</label>
+                <input type="text" name="student_name" id="student_id">
+                <label for="date">Date :</label>
+                <input type="text" name="date" id="date" placeholder="MM-DD-YYYY">
 
-            <button type="submit">Add</button>
+                <button type="submit">Add</button>
+
+            </form>
+            <form action="/students" method="post">
+            <button type="submit">View Students</button>
         </form>
+        </div>
     </body>
 </html>
